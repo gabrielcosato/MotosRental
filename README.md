@@ -141,6 +141,14 @@ Para configurar e rodar o projeto em sua máquina local, siga os passos abaixo:
 -  `docker-compose.yml` : Configuração do PostgreSQL, RabbitMQ, e MongoDB (Portas e credenciais).
 -  `appsettings.Development.Json`
 
+  # Acesso token JWT
+
+  -    ```bash
+        username: "Admin"
+        
+        password: "123"
+        ```
+
 ## Diferenciais
 - EntityFramework
 - Docker e Docker Compose
