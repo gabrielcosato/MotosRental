@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="src\MotosRental.Api\" />
+      <Folder Include="src\MotosRental.Domain\" />
+      <Folder Include="src\MotosRental.Infraestructure\Persistence\" />
+      <Folder Include="wwwroot\uploads\cnh\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.8" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.4" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.4">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="MongoDB.Driver" Version="3.4.3" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+      <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+      <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.3" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="9.0.3" />
+      <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="9.0.0" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="src\MotosRental.Api\Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="src\MotosRental.Api\Views\Home\Privacy.cshtml" />
+      <_ContentIncludedByDefault Remove="src\MotosRental.Api\Views\Shared\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="src\MotosRental.Api\Views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="src\MotosRental.Api\Views\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="src\MotosRental.Api\Views\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="src\MotosRental.Api\Views\_ViewStart.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Views\Home\Index.cshtml" />
+      <AdditionalFiles Include="Views\Home\Privacy.cshtml" />
+      <AdditionalFiles Include="Views\Shared\Error.cshtml" />
+      <AdditionalFiles Include="Views\Shared\_Layout.cshtml" />
+      <AdditionalFiles Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+      <AdditionalFiles Include="Views\_ViewImports.cshtml" />
+      <AdditionalFiles Include="Views\_ViewStart.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="src\MotosRental.Infraestructure\Migrations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="src\MotosRental.Infraestructure\Migrations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="src\MotosRental.Infraestructure\Migrations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="src\MotosRental.Infraestructure\Migrations\**" />
+    </ItemGroup>
+
+</Project>

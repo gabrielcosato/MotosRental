@@ -1,0 +1,51 @@
+﻿# docker-compose.yml
+version: '3.8'
+
+services:
+  
+  postgres-db:
+    image: postgres:15-alpine
+    container_name: motos-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=motos_user
+      - POSTGRES_PASSWORD=motos_password
+      - POSTGRES_DB=motos_rental_db
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  
+ 
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: motos-rabbitmq
+    ports:
+      - "5672:5672"       # Porta para a aplicação se conectar
+      - "15672:15672"     
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+        
+  mongodb:
+    image: mongo:latest
+    container_name: motos-mongodb
+    ports:
+      - "27017:27017"              # Porta do mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    volumes:
+      - mongodb-data:/data/db
+
+
+volumes:
+
+  postgres-data:
+
+
+  rabbitmq-data:
+    
+  mongodb-data:
+
